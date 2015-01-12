@@ -1,0 +1,39 @@
+{
+    "countrys": [{
+        "id": 1,
+        "name": "China",
+        "states": [{
+            "id": "1.1",
+            "name": "Anhui", 
+            "streets": [
+            	"China-A",
+            	"China-B"
+            ]
+        },{
+            "id": "1.1",
+            "name": "Hunan", 
+            "streets": [
+            	"China-A",
+            	"China-B"
+            ]
+        },{
+            "id": "1.1",
+            "name": "Hebei", 
+            "streets": [
+            	"China-A",
+            	"China-B"
+            ]
+        }]
+    },{
+        "id": 2,
+        "name": "USA",
+        "states": [{
+            "id": "2.1",
+            "name": "CA", 
+            "streets": [
+            	"USA-A",
+            	"USA-B"
+            ]
+        }]
+    }]
+}

@@ -1,0 +1,7 @@
+bower_components/*
+node_modules/*
+tmp/*
+dist/*
+puglic/css/*
+nohup.out
+/target

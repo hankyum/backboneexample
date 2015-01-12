@@ -1,0 +1,27 @@
+{{#empty collection}}
+{{else}}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Old</th>
+                <th>New</th>
+            </tr>
+        </thead>
+        {{#collection tag="tbody"}}
+            {{#ifCond oldVal '!==' val}}
+                <tr>
+                    <td>{{label}}</td>
+                    <td>{{#formatFormVal oldVal}}{{/formatFormVal}}</td>
+                    <td>
+                        {{#if val.name}}
+                            {{val.name}}
+                        {{else}}
+                            {{#formatFormVal val}}{{/formatFormVal}}
+                        {{/if}}
+                    </td>
+                </tr>
+            {{/ifCond}}
+        {{/collection}}
+    </table>
+{{/empty}}

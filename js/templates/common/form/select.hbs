@@ -1,0 +1,29 @@
+<label class="col-md-2 col-xs-2 control-label">{{label}}</label>
+<div class="col-md-2 col-xs-4">
+    <select name="{{name}}" value="{{val}}" class="selectpicker val-ele" data-width="auto">
+        {{#each vals}}
+            <option 
+                {{#if name}}
+                    {{#if id}}
+                        value="{{id}}"
+                        {{#ifCond id "==" ../../../val}} 
+                             selected
+                        {{/ifCond}}
+                    {{/if}}
+                    {{#if val}}
+                        value="{{val}}"
+                        {{#ifCond val "==" ../../../val}} 
+                             selected   
+                        {{/ifCond}}
+                    {{/if}}  
+                    >{{name}}
+                {{else}}
+                    {{#ifCond this "==" ../../val}} 
+                         selected
+                    {{/ifCond}}
+                    >{{this}}
+                {{/if}}
+            </option>
+        {{/each}}
+    </select>
+</div>

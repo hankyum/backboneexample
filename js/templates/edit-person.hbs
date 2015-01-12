@@ -1,0 +1,48 @@
+<div class="fuelux" style="margin-top:-50px">
+    <h3 style="margin-top:0">Edit Person</h3>
+    <div class="wizard" data-initialize="wizard" id="config-edit-wizard">
+        <ul class="steps">
+            <li data-step="1" class="active"><span class="badge">1</span>Switches<span class="chevron"></span>
+            </li>
+            <li data-step="2"><span class="badge">2</span>Test<span class="chevron"></span>
+            </li>
+            <li data-step="3"><span class="badge">3</span>Others<span class="chevron"></span>
+            </li>
+            <li data-step="4"><span class="badge">4</span>Children<span class="chevron"></span>
+            </li>
+            <li data-step="5" class="step-sub-edit hide"><span class="badge">5</span>Sub Edit<span class="chevron"></span>
+            </li>
+        </ul>
+         <form class="form-horizontal" data-bv-group="config-form">
+            <div class="step-content">
+                <div class="show-on-top">
+                    {{#hasPrivilege 'new'}}
+                        <div>
+                            <button class="pull-right btn-new-sub btn">New Sub</button>
+                        </div>
+                    {{/hasPrivilege}}
+                    <div class="criteria"></div>
+                    <div class="notEditable"></div>
+                </div>
+                <div class="step-pane switches active" data-step="1"/>
+                <div class="step-pane amounts" data-step="2"/>
+                <div class="step-pane others" data-step="3"/>
+                <div class="step-pane screen5 sub-configs" data-step="4"/>
+                <div class="step-pane screen6 subConfigEdit" data-step="5"/>
+               
+                {{#if id}}
+                    <button class="pull-left back-btn btn">Back to list</button>
+                {{/if}}
+                {{#hasPrivilege 'edit'}}
+                    <button type="submit" class="pull-right save-btn btn">Save changes</button>
+                {{/hasPrivilege}}
+            </div>
+        </form>
+        <div class="actions">
+            <button class="btn btn-default btn-prev"><span class="glyphicon glyphicon-arrow-left" />Prev</button>
+            <button class="btn btn-default btn-next" data-last="Complete">Next<span class="glyphicon glyphicon-arrow-right" />
+            </button>
+        </div>
+        <div class="change-list"></div>
+    </div>
+</div>

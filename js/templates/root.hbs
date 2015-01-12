@@ -1,0 +1,68 @@
+<nav class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" class="disabled" href="javascript:void(0)">Backbone Example</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav" id="admin-tab">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Person<b class="caret"></b></a>
+                    <ul class="dropdown-menu animated fadeInUp">
+                        {{#hasPrivilege 'new'}}
+                            <li><a href="#newPerson">New Person</a> </li>
+                        {{/hasPrivilege}}
+                        <li><a href="#persons">List</a> </li>
+                    </ul>
+                </li>
+                <li><a href="#others">Others</a></li>
+            </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
+                    <ul class="dropdown-menu animated fadeInUp">
+                        <li><a href="#">Profile</a> </li>
+                        <li><a href="#">Logout</a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container " style="position:relative;top:60px">
+    <div class="row">
+        {{layout-element}}
+    </div>
+</div>
+<footer>
+    <div class="container" style="position:fixed;bottom:60px" >
+        <div class="copy text-center">
+            Copyright 2014 <a href='#'>Website</a>
+        </div>
+    </div>
+</footer>
+<script>
+$(document).ready(function() {
+    var toggleNav = function(nav) {
+        nav.addClass("active");
+        nav.siblings().removeClass("active");
+    }
+    $('#admin-tab li').each(function() {
+        var hash = document.location.hash;
+        if ($(this).find("a:first").attr("href") == hash) {
+            toggleNav($(this));
+        }
+    });
+    $('#admin-tab li').click(function() {
+        toggleNav($(this));
+    });
+    $('[data-toggle="offcanvas"]').click(function() {
+        $('.row-offcanvas').toggleClass('active')
+    });
+});
+</script>
