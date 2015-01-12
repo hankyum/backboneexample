@@ -8,7 +8,7 @@ define(['thorax'], function(Thorax) {
                 "prop": "countrys",
                 "url": "/data/country.json",
                 "type": "select",
-                "child": "state"/*,
+                "child": "state",/*,
                 "valsStatic": [{
                     id: '-1',
                     name: 'NONE'
@@ -32,6 +32,25 @@ define(['thorax'], function(Thorax) {
                     id: '-1',
                     name: 'NONE'
                 }]*/
+            }, {
+                "name": "department",
+                "label": "Department",
+                "type": "select",
+                "child": "team",
+                "vals": [{
+                    id: '1',
+                    name: 'Dep A',
+                    teams: ["Team A", "Team B"]
+                },{
+                    id: '2',
+                    name: 'Dep B',
+                    teams: ["Team C", "Team D"]
+                }]
+            }, {
+                "name": "team",
+                "label": "Team",
+                "type": "select",
+                "ref": "department.teams"
             }]
         }
     }

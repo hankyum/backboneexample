@@ -35,9 +35,11 @@ define([
                 if (refEle.view()) {
                     var val = _.find(refEle.view().model.get("vals"),
                         function(v) {
-                            if (_.has(v, "id") && v.id == refEle.val()) {
+                            if (v == refEle.val()) {
                                 return true;
-                            }
+                            } else if (_.has(v, "id") && v.id == refEle.val()) {
+                                return true;
+                            } 
                         });
                     if (val && _.has(val, refElementProp)) {
                         return val[refElementProp];

@@ -15,8 +15,8 @@ define([
                 type: 'checkbox'
             }, {
                 name: "Gender",
-                label: "Can get balance",
-                type: "checkbox",
+                label: "Gender",
+                type: "select",
                 vals: ['Boy', 'Girl']
             }]
         },
